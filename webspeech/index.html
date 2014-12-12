@@ -7,7 +7,9 @@
     <title>Web Speech API Demo</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,11 +19,43 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Web Speech API Demo</h1>
-
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Web Speech API Demo</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <input id="inputText" type="text" value="" class="form-control" placeholder="音声認識結果がここに表示されるはず"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="controlPannel">
+              <button id="startButton" class="btn btn-default pull-left" type="button" value="start">
+                音声認識スタート <i class="fa fa-microphone fa-fw"></i>
+              </button>
+              <button id="stopButton" class="btn btn-default" type="button" value="stop">
+                音声認識ストップ <i class="fa fa-microphone-slash fa-fw"></i>
+              </button>
+              <select id="selectLang" class="form-control pull-right">
+                <option value="ja-JP">日本語</option>
+                <option value="en-US">English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
