@@ -11,21 +11,16 @@
   rec.interimResults = true;
 
   $('#startButton').click(function(){
-    console.log('start');
     recFormControl(true);
     rec.lang = $('#selectLang').val();
-    console.log(rec.lang);
 
     rec.start();
-
   });
 
   $('#stopButton').click(function(){
-    console.log('stop');
     recFormControl(false);
 
     rec.stop();
-
   });
 
   rec.onstart = function(){
@@ -35,22 +30,6 @@
   rec.onend = function(){
     $('#messageArea').html("<p>state: end</p>");
     recFormControl(false);
-  };
-
-  rec.onaudiostart = function(){
-    $('#messageArea').html("<p>state: audiostart</p>");
-  };
-
-  rec.onaudioend = function(){
-    $('#messageArea').html("<p>state: audioend</p>");
-  };
-
-  rec.onsoundstart = function(){
-    $('#messageArea').html("<p>state: soundstart</p>");
-  };
-
-  rec.onsoundend = function(){
-    $('#messageArea').html("<p>state: soundend</p>");
   };
 
   rec.onspeechstart = function(){
@@ -79,8 +58,6 @@
         $('#inputText').val(results[i][0].transcript).addClass('isNotFinal');
       }
     }
-    $('#messageArea').html("<p>state: result</p>");
-
   };
 
   function recFormControl(start){
