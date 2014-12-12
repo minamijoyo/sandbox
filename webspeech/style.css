@@ -20,7 +20,6 @@ body	{
   margin: 0 0 20px 0;
 }
 
-
 #startButton {
   width: 33%;
 }
@@ -31,4 +30,15 @@ body	{
 
 #selectLang {
   width: 33%;
+}
+
+#messageArea {
+  margin: 10px 0 0 0;
+}
+
+#messageArea p {
+  padding: 10px;
+  text-align: left;
+  color: #f00;
+  background-color: #fcc;
 }
