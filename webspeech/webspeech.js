@@ -6,14 +6,14 @@
     return;
   }
 
-  var recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
-  recognition.interimResults = true;
+  var rec = new webkitSpeechRecognition();
+  rec.continuous = true;
+  rec.interimResults = true;
 
   $('#startButton').click(function(){
     console.log('start');
-    recognition.lang = $('#selectLang').val();
-    console.log(recognition.lang);
+    rec.lang = $('#selectLang').val();
+    console.log(rec.lang);
 
   });
 
