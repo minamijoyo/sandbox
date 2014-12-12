@@ -39,8 +39,6 @@ body	{
 #messageArea p {
   padding: 10px;
   text-align: left;
-  color: #f00;
-  background-color: #fcc;
 }
 
 .isNotFinal {
