@@ -29,9 +29,9 @@
     var results = e.results;
     for(var i = e.resultIndex; i<results.length; i++){
       if(results[i].isFinal){
-        $('#inputText').val(results[i][0].transcript);
+        $('#inputText').val(results[i][0].transcript).removeClass('isNotFinal');
       }else{
-        $('#inputText').val(results[i][0].transcript);
+        $('#inputText').val(results[i][0].transcript).addClass('isNotFinal');
       }
     }
   };
