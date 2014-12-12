@@ -1,6 +1,6 @@
 ;(function(d,$){
   if (!('webkitSpeechRecognition' in window)) {
-    $('#messageArea').append(
+    $('#messageArea').html(
       "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
     );
     return;
@@ -10,11 +10,11 @@
   recognition.continuous = true;
   recognition.interimResults = true;
 
-  recognition.lang = $('#selectLang').val();
-  console.log(recognition.lang);
-
   $('#startButton').click(function(){
     console.log('start');
+    recognition.lang = $('#selectLang').val();
+    console.log(recognition.lang);
+
   });
 
   $('#stopButton').click(function(){
