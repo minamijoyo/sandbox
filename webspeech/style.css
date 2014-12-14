@@ -14,6 +14,17 @@ body	{
   margin: 10px 0 0 0;
 }
 
+#speakText {
+  height: 3em;
+  font-size: 1.4em;
+  margin: 0 0 20px 0;
+  width: 66%;
+}
+
+#speakButton {
+  width: 33%;
+}
+
 #inputText {
   height: 3em;
   font-size: 1.4em;

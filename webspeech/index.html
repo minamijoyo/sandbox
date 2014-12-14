@@ -32,7 +32,15 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <input id="inputText" type="text" value="" class="form-control" placeholder="音声認識結果がここに表示されます"/>
+            <input id="speakText" type="text" value="This is web speech api demo." class="form-control pull-left"/>
+          </div>
+          <button id="speakButton" class="btn btn-default pull-right" type="button" value="speak">
+            聞いてみる <i class="fa fa-volume-up fa-fw"></i>
+          </button>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <input id="inputText" type="text" value="" class="form-control" placeholder="ここに音声認識結果が表示されます"/>
           </div>
         </div>
         <div class="row">

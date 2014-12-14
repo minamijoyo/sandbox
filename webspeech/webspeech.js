@@ -1,4 +1,22 @@
 ;(function(d,$){
+  if (!('SpeechSynthesisUtterance' in window)){
+    $('#messageArea').html(
+      "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
+    );
+    return;
+  }
+
+  $('#speakButton').click(function(){
+    var syn = new SpeechSynthesisUtterance();
+    syn.volume = 1;
+    syn.rate = 1;
+    syn.pitch = 2;
+    syn.text = $('#speakText').val();
+    syn.lang = $('#selectLang').val();
+
+    speechSynthesis.speak(syn);
+  });
+
   if (!('webkitSpeechRecognition' in window)){
     $('#messageArea').html(
       "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
