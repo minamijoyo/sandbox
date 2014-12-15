@@ -72,6 +72,16 @@
     for(var i = e.resultIndex; i<results.length; i++){
       if(results[i].isFinal){
         $('#recognitionText').val(results[i][0].transcript).removeClass('isNotFinal');
+        var confidence = results[i][0].confidence;
+        var synthesisStr = $('#synthesisText').val();
+        var recognitionStr = $('#recognitionText').val();
+        var match = synthesisStr === recognitionStr ? "true" : "false";
+        $('#messageArea').html(
+          "<p>state: onresult</p>"
+          + "<p>match: " + match + "</p>"
+          + "<p>confidence: " + confidence + "</p>"
+          );
+
       }else{
         $('#recognitionText').val(results[i][0].transcript).addClass('isNotFinal');
       }
