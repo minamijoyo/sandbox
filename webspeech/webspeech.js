@@ -6,15 +6,15 @@
     return;
   }
 
-  $('#speakButton').click(function(){
-    var syn = new SpeechSynthesisUtterance();
-    syn.volume = 1;
-    syn.rate = 1;
-    syn.pitch = 2;
-    syn.text = $('#speakText').val();
-    syn.lang = $('#selectLang').val();
+  $('#synthesisButton').click(function(){
+    var synthesis = new SpeechSynthesisUtterance();
+    synthesis.volume = 1;
+    synthesis.rate = 1;
+    synthesis.pitch = 2;
+    synthesis.text = $('#synthesisText').val();
+    synthesis.lang = $('#selectLang').val();
 
-    speechSynthesis.speak(syn);
+    speechSynthesis.speak(synthesis);
   });
 
   if (!('webkitSpeechRecognition' in window)){
@@ -24,69 +24,69 @@
     return;
   }
 
-  var rec = new webkitSpeechRecognition();
-  rec.continuous = true;
-  rec.interimResults = true;
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
 
-  $('#startButton').click(function(){
-    recFormControl(true);
-    rec.lang = $('#selectLang').val();
+  $('#recognitionStartButton').click(function(){
+    recognitionFormControl(true);
+    recognition.lang = $('#selectLang').val();
 
-    rec.start();
+    recognition.start();
   });
 
-  $('#stopButton').click(function(){
-    recFormControl(false);
+  $('#recognitionStopButton').click(function(){
+    recognitionFormControl(false);
 
-    rec.stop();
+    recognition.stop();
   });
 
-  rec.onstart = function(){
+  recognition.onstart = function(){
     $('#messageArea').html("<p>state: start</p>");
   };
 
-  rec.onend = function(){
+  recognition.onend = function(){
     $('#messageArea').html("<p>state: end</p>");
-    recFormControl(false);
+    recognitionFormControl(false);
   };
 
-  rec.onspeechstart = function(){
+  recognition.onspeechstart = function(){
     $('#messageArea').html("<p>state: speechstart</p>");
   };
 
-  rec.onspeechend = function(){
+  recognition.onspeechend = function(){
     $('#messageArea').html("<p>state: speechend</p>");
   };
 
-  rec.onnomatch = function(){
+  recognition.onnomatch = function(){
     $('#messageArea').html("<p>state: nomatch</p>");
   };
 
-  rec.onerror = function(){
+  recognition.onerror = function(){
     $('#messageArea').html("<p>state: error</p>");
-    recFormControl(false);
+    recognitionFormControl(false);
   };
 
-  rec.onresult = function(e){
+  recognition.onresult = function(e){
     var results = e.results;
     for(var i = e.resultIndex; i<results.length; i++){
       if(results[i].isFinal){
-        $('#inputText').val(results[i][0].transcript).removeClass('isNotFinal');
+        $('#recognitionText').val(results[i][0].transcript).removeClass('isNotFinal');
       }else{
-        $('#inputText').val(results[i][0].transcript).addClass('isNotFinal');
+        $('#recognitionText').val(results[i][0].transcript).addClass('isNotFinal');
       }
     }
   };
 
-  function recFormControl(start){
+  function recognitionFormControl(start){
     if(start){
-      $('#startButton').attr('disabled','true');
-      $('#stopButton').attr('disabled','false');
-      $('#stopButton').removeAttr('disabled');
+      $('#recognitionStartButton').attr('disabled','true');
+      $('#recognitionStopButton').attr('disabled','false');
+      $('#recognitionStopButton').removeAttr('disabled');
     }else{
-      $('#stopButton').attr('disabled','true');
-      $('#startButton').attr('disabled','false');
-      $('#startButton').removeAttr('disabled');
+      $('#recognitionStopButton').attr('disabled','true');
+      $('#recognitionStartButton').attr('disabled','false');
+      $('#recognitionStartButton').removeAttr('disabled');
     }
   }
 

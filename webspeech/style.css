@@ -11,39 +11,44 @@ body	{
 
 .contents {
   text-align: center;
+}
+
+.setting {
   margin: 10px 0 0 0;
 }
 
-#speakText {
-  height: 3em;
+.synthesis {
+  margin: 10px 0 0 0;
+}
+
+#synthesisText {
+  height: 10em;
   font-size: 1.4em;
-  margin: 0 0 20px 0;
-  width: 66%;
 }
 
-#speakButton {
-  width: 33%;
+#synthesisButton {
+  width: 100%;
 }
 
-#inputText {
-  height: 3em;
+.recognition {
+  margin: 10px 0 0 0;
+}
+
+#recognitionText {
+  height: 10em;
   font-size: 1.4em;
-  margin: 0 0 20px 0;
 }
 
-#startButton {
-  width: 33%;
+#recognitionStartButton {
+  width: 100%;
 }
 
-#stopButton {
-  width: 33%;
+#recognitionStopButton {
+  width: 100%;
+  margin: 10px 0 0 0;
 }
 
-#selectLang {
-  width: 33%;
-}
-
-#messageArea {
+.message {
   margin: 10px 0 0 0;
 }
 
