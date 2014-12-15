@@ -22,7 +22,7 @@ body	{
 }
 
 #synthesisText {
-  height: 10em;
+  height: 6em;
   font-size: 1.4em;
 }
 
@@ -35,7 +35,7 @@ body	{
 }
 
 #recognitionText {
-  height: 10em;
+  height: 6em;
   font-size: 1.4em;
 }
 
