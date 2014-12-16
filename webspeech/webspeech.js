@@ -1,4 +1,5 @@
 ;(function(d,$){
+  //Speech Synthesis
   if (!('SpeechSynthesisUtterance' in window)){
     $('#messageArea').html(
       "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
@@ -24,9 +25,12 @@
     return;
   }
 
+  //Speech Recognition
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
   recognition.interimResults = true;
+
+  recognitionFormControl(false);
 
   $('#recognitionStartButton').click(function(){
     recognitionFormControl(true);
@@ -73,13 +77,9 @@
       if(results[i].isFinal){
         $('#recognitionText').val(results[i][0].transcript).removeClass('isNotFinal');
         var confidence = results[i][0].confidence;
-        var synthesisStr = $('#synthesisText').val();
-        var recognitionStr = $('#recognitionText').val();
-        var match = synthesisStr === recognitionStr ? "true" : "false";
         $('#messageArea').html(
-          "<p>state: onresult</p>"
-          + "<p>match: " + match + "</p>"
-          + "<p>confidence: " + confidence + "</p>"
+          "<p>state: onresult<br>" +
+          "confidence: " + confidence + "</p>"
           );
 
       }else{

@@ -9,6 +9,9 @@ body	{
   text-align: center;
 }
 
+.header h1 {
+  font-size: 2em;
+}
 .contents {
   text-align: center;
 }
