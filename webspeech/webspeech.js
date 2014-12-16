@@ -18,6 +18,7 @@
     speechSynthesis.speak(synthesis);
   });
 
+  //Speech Recognition
   if (!('webkitSpeechRecognition' in window)){
     $('#messageArea').html(
       "<p>webkitSpeechRecognitionが見つかりません。PC版のChromeで試してみてください。</p>"
@@ -25,7 +26,6 @@
     return;
   }
 
-  //Speech Recognition
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
   recognition.interimResults = true;
