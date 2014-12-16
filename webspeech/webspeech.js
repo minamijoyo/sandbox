@@ -2,7 +2,7 @@
   //Speech Synthesis
   if (!('SpeechSynthesisUtterance' in window)){
     $('#messageArea').html(
-      "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
+      "<p>SpeechSynthesisUtteranceが見つかりません。PC版のChromeで試してみてください。</p>"
     );
     return;
   }
@@ -20,7 +20,7 @@
 
   if (!('webkitSpeechRecognition' in window)){
     $('#messageArea').html(
-      "<p>Web Speech API には未対応です。Chromeでお試し下さい。</p>"
+      "<p>webkitSpeechRecognitionが見つかりません。PC版のChromeで試してみてください。</p>"
     );
     return;
   }
